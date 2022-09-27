@@ -6,6 +6,6 @@ export enum Headings {
 
 export enum AppRoute {
   Root = '/',
-  Posts = 'posts',
-  Contacts = 'contacts',
+  Posts = '/posts',
+  Contacts = '/contacts',
 }
