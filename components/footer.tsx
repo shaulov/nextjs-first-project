@@ -2,9 +2,9 @@ import Heading from "./heading";
 
 function Footer () {
   return (
-    <header>
+    <footer>
       <Heading tag={'h3'} text={'This is Page Footer'}/>
-    </header>
+    </footer>
   );
 }
 
