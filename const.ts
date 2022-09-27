@@ -3,3 +3,9 @@ export enum Headings {
   H2 = 'h2',
   H3 = 'h3',
 }
+
+export enum AppRoute {
+  Root = '/',
+  Posts = '/posts',
+  Contacts = '/contacts',
+}
