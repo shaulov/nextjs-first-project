@@ -1,9 +1,9 @@
-import Heading from "./heading";
+import Navbar from "./navbar";
 
 function Header () {
   return (
     <header>
-      <Heading tag={'h3'} text={'This is Page Header'}/>
+      <Navbar/>
     </header>
   );
 }
