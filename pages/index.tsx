@@ -1,8 +1,8 @@
-import type { NextPage } from 'next';
+import Heading from '../components/heading';
 
-const Home: NextPage = () => {
+function Home () {
   return (
-    <h1>Hello World!</h1>
+    <Heading tag={'h1'} text={'Hello World!'} />
   );
 }
 
