@@ -1,8 +1,11 @@
 import Heading from '../components/heading';
+import styles from '../styles/Home.module.scss';
 
 function Home () {
   return (
-    <Heading tag={'h1'} text={'Hello World!'} />
+    <div className={styles.wrapper}>
+      <Heading tag={'h1'} text={'Hello World!'} />
+    </div>
   );
 }
 
