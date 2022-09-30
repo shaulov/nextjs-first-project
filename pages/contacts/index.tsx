@@ -1,8 +1,14 @@
+import Head from 'next/head';
 import Heading from "../../components/heading";
 
 function Contacts () {
   return (
-    <Heading tag={'h1'} text={'Contacts list:'} />
+    <>
+      <Head>
+        <title>Contacts</title>
+      </Head>
+      <Heading tag={'h1'} text={'Contacts list:'} />
+    </>
   );
 }
 
