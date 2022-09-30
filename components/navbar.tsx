@@ -15,7 +15,7 @@ function Navbar () {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        Logo
+        <img src="/logo.webp" alt="logo" width="60" height="60" />
       </div>
       <div className={styles.links}>
         {
