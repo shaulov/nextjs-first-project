@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
+import Image from 'next/image'
 import { AppRoute } from '../const';
 import styles from '../styles/Navbar.module.scss';
 
@@ -15,7 +16,7 @@ function Navbar () {
   return (
     <nav className={styles.nav}>
       <div className={styles.logo}>
-        Logo
+        <Image src="/logo.webp" alt="logo" width="60" height="60" />
       </div>
       <div className={styles.links}>
         {
