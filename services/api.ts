@@ -17,7 +17,23 @@ const useApiService = () => {
     }
   }
 
-  return { fetchUsers };
+  const fetchUser = async (id: string) => {
+    try {
+      const response = await fetch(`${_apiBase}/users/${id}`);
+
+      if (!response.ok) {
+        throw new Error(`Couldn't fetch ${response.url}, status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  return { fetchUsers, fetchUser };
 }
 
 export default useApiService;
