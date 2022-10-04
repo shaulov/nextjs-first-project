@@ -4,16 +4,26 @@ import api from '../../services/api';
 import Heading from "../../components/heading";
 import { UserData } from '../../types/user-data';
 
-function Contacts () {
-  const [users, setUsers] = useState<UserData[] | null>(null);
+type ContactsProps = {
+  users: UserData[];
+}
 
+export const getStaticProps = async () => {
   const { fetchUsers } = api();
+  const data = await fetchUsers();
 
-  useEffect(() => {
-    fetchUsers()
-      .then((data) => setUsers(data));
-  }, []);
+  if (!data) {
+    return {
+      notFound: true,
+    }
+  }
+  
+  return {
+    props: { users: data },
+  }
+};
 
+function Contacts ({ users }: ContactsProps) {
   return (
     <div>
       <Head>
