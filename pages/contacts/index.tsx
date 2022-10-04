@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import api from '../../services/api';
 import Heading from "../../components/heading";
 import { UserData } from '../../types/user-data';
@@ -31,8 +31,10 @@ function Contacts ({ users }: ContactsProps) {
       </Head>
       <Heading tag={'h1'} text={'Contacts list:'} />
       <ul>
-        {users && users.map(({ id, name, email }) => (
-          <li key={id}><strong>{name}</strong>: {email}</li>
+        {users && users.map(({ id, name }) => (
+          <li key={id}>
+            <Link href={`/contacts/${id}`}>{name}</Link>
+          </li>
         ))}
       </ul>
     </div>
