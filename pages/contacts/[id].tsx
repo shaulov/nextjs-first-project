@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { GetServerSideProps } from 'next'
+import { GetServerSideProps } from 'next';
 import ContactInfo from '../../components/contact-info';
 import api from '../../services/api';
 import { UserData } from '../../types/user-data';
