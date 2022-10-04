@@ -6,7 +6,6 @@ type LayoutProps = {
 }
 
 function Layout ({ children }: LayoutProps) {
-  console.log(children);
   return (
     <>
       <Header/>
