@@ -2,15 +2,15 @@ import Head from 'next/head';
 import Link from 'next/link';
 import api from '../../services/api';
 import Heading from "../../components/heading";
-import { UserData } from '../../types/user-data';
+import { PostData } from '../../types/post-data';
 
 type ContactsProps = {
-  users: UserData[];
+  posts: PostData[];
 }
 
 export const getStaticProps = async () => {
-  const { fetchUsers } = api();
-  const data = await fetchUsers();
+  const { fetchPosts } = api();
+  const data = await fetchPosts();
 
   if (!data) {
     return {
@@ -19,21 +19,21 @@ export const getStaticProps = async () => {
   }
   
   return {
-    props: { users: data },
+    props: { posts: data },
   }
 };
 
-function Contacts ({ users }: ContactsProps) {
+function Posts ({ posts }: ContactsProps) {
   return (
     <div>
       <Head>
-        <title>Contacts</title>
+        <title>Posts</title>
       </Head>
       <Heading tag={'h1'} text={'Contacts list:'} />
       <ul>
-        {users && users.map(({ id, name }) => (
+        {posts && posts.map(({ id, title }) => (
           <li key={id}>
-            <Link href={`/contacts/${id}`}>{name}</Link>
+            <Link href={`/posts/${id}`}>{title}</Link>
           </li>
         ))}
       </ul>
@@ -41,4 +41,4 @@ function Contacts ({ users }: ContactsProps) {
   );
 }
 
-export default Contacts;
+export default Posts;
