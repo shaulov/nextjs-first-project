@@ -1,5 +1,6 @@
 const useApiService = () => {
   const _apiBase = 'https://jsonplaceholder.typicode.com';
+  const _ownApi = `${process.env.API_HOST}/socials`;
 
   const fetchUsers = async () => {
     try {
@@ -65,7 +66,23 @@ const useApiService = () => {
     }
   }
 
-  return { fetchUsers, fetchUser, fetchPosts, fetchPost };
+  const fetchSocials = async () => {
+    try {
+      const response = await fetch(_ownApi);
+
+      if (!response.ok) {
+        throw new Error(`Couldn't fetch ${response.url}, status: ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      return data;
+    } catch (error) {
+      throw error;
+    }
+  }
+
+  return { fetchUsers, fetchUser, fetchPosts, fetchPost, fetchSocials };
 }
 
 export default useApiService;
