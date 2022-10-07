@@ -6,5 +6,7 @@ export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<SocialData[]>
 ) {
-  res.status(200).json(socials)
+  if (req.method === 'GET') {
+    res.status(200).json(socials)
+  }
 }

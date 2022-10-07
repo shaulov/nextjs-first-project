@@ -1,6 +1,6 @@
 const useApiService = () => {
   const _apiBase = 'https://jsonplaceholder.typicode.com';
-  const _ownApi = 'http://localhost:3000/api/socials';
+  const _ownApi = `${process.env.API_HOST}/socials`;
 
   const fetchUsers = async () => {
     try {
