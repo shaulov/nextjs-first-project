@@ -6,6 +6,10 @@ type SocialsProps = {
 }
 
 function Socials ({ socials }: SocialsProps) {
+  if (!socials) {
+    return null;
+  }
+
   return (
     <ul className={styles.socials}>
       {socials && socials.map(({ id, icon, path }) => (
