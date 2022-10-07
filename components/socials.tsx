@@ -1,4 +1,5 @@
 import { SocialData } from '../types/social-data';
+import styles from '../styles/Socials.module.scss';
 
 type SocialsProps = {
   socials: SocialData[],
@@ -6,7 +7,7 @@ type SocialsProps = {
 
 function Socials ({ socials }: SocialsProps) {
   return (
-    <ul>
+    <ul className={styles.socials}>
       {socials && socials.map(({ id, icon, path }) => (
         <li key={id}>
           <a href={path} target="_blank" rel='noopener noreferrer'>
