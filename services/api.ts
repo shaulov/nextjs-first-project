@@ -36,7 +36,7 @@ const useApiService = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await fetch(_ownApi);
+      const response = await fetch(`${_apiBase}/posts`);
 
       if (!response.ok) {
         throw new Error(`Couldn't fetch ${response.url}, status: ${response.status}`);
@@ -68,7 +68,7 @@ const useApiService = () => {
 
   const fetchSocials = async () => {
     try {
-      const response = await fetch(`${_apiBase}/users`);
+      const response = await fetch(_ownApi);
 
       if (!response.ok) {
         throw new Error(`Couldn't fetch ${response.url}, status: ${response.status}`);
