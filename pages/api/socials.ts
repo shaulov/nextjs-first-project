@@ -1,15 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { socials } from './data/socials';
-
-type Data = {
-  id: number,
-  icon: string,
-  path: string,
-}
+import { SocialData } from '../../types/social-data';
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data[]>
+  res: NextApiResponse<SocialData[]>
 ) {
   res.status(200).json(socials)
 }
